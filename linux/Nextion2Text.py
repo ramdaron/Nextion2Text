@@ -1537,10 +1537,13 @@ class Page:
                 self.commonAttributes &= attributes
 
         self.components.sort(key=lambda c: c.rawData["att"]["objname"])
-        self.components.sort(key=lambda c: c.rawData["att"]["id"])
+        #self.components.sort(key=lambda c: c.rawData["att"]["id"])
 
     def __repr__(self):
-        return self.components[0].__repr__()
+	    for c in self.components:
+	        if c.rawData["att"]["id"] == 0:
+                return c.__repr__()
+        #return self.components[0].__repr__()
 
     def getTextLines(self, *args, **kwargs):
         if "key" not in kwargs:
