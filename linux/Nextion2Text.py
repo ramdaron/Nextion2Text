@@ -1536,6 +1536,7 @@ class Page:
             else:
                 self.commonAttributes &= attributes
 
+        self.components.sort(key=lambda c: c.rawData["att"]["type"])
         self.components.sort(key=lambda c: c.rawData["att"]["objname"])
 
     def __repr__(self):
