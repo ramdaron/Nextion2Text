@@ -1540,8 +1540,8 @@ class Page:
         #self.components.sort(key=lambda c: c.rawData["att"]["id"])
 
     def __repr__(self):
-	    for c in self.components:
-	        if c.rawData["att"]["id"] == 0:
+        for c in self.components:
+            if c.rawData["att"]["id"] == 0:
                 return c.__repr__()
         #return self.components[0].__repr__()
 
