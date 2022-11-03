@@ -1801,7 +1801,10 @@ if __name__ == '__main__':
         with open(jsonFolder / Path("Program.s" + ".json"), "w") as f:
             json.dump({"Program.s": hmi.programS}, f, indent=4)
     for page in hmi.pages:
-        name = page.components[0].rawData["att"]["objname"]#str(page)
+        for c in self.components:
+            if c.rawData["att"]["id"] == 0:
+                name = c.rawData["att"]["objname"]
+        #name = page.components[0].rawData["att"]["objname"]#str(page)
         text = page.getText(emptyLinesLimit=1, includeUnknown=includeUnknown,
                             includeVisual=includeVisual, emptyEvents=args.empty_events,
                             keepNames=args.keep_names, keepValues=args.keep_values)
