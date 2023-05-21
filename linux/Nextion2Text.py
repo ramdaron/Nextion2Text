@@ -1407,7 +1407,7 @@ class Component:
                 self.rawData["att"] = rawAttributes
             else:
                 # code lines
-                eventCode = (b"\n".join(v)).decode("iso_8859_1")
+                eventCode = (b"\n".join(v)).decode("utf-8")
                 self.rawData[k] = eventCode
 
 class Header:
