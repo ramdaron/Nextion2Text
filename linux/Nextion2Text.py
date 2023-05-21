@@ -101,6 +101,7 @@ class Component:
                 51:  "Timer",
 		5:   "TouchCap",
                 -1: "Unknown",
+		70: "Unknown",
             },
             "type": {
                 52: {
